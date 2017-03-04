@@ -56,23 +56,23 @@ var hero = {
   speed: 256 // movement in pixels per second
 };
 var princess = {};
-var princessesCaught = 0;
+var princessesCaught = localStorage.getItem('princessesCaught') || 0;
 localStorage.setItem('princessesCaught', princessesCaught);
 var map;
 var ELEMENT_SIZE = 32;
 var rows = canvas.height / ELEMENT_SIZE;
 var cols = canvas.width / ELEMENT_SIZE;
-var numStones = 2;
+var numStones = localStorage.getItem('numStones') || 2;
 localStorage.setItem('numStones', numStones);
 var stones = [];
-var numMonsters = 1;
+var numMonsters = localStorage.getItem('numMonsters') || 1;
 localStorage.setItem('numMonsters', numMonsters);
 var monsters = [];
-var monsterSpeedFactor = 20;
+var monsterSpeedFactor = localStorage.getItem('monsterSpeedFactor') || 20;
 localStorage.setItem('monsterSpeedFactor', monsterSpeedFactor);
 var monsterSpeed = Math.round(hero.speed / monsterSpeedFactor);
 //var allElements = [];
-var level = 1;
+var level = localStorage.getItem('level') || 1;
 localStorage.setItem('level', level);
 // Handle keyboard controls
 var keysDown = {};
